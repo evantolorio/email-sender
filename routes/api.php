@@ -17,6 +17,4 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::get('/v1/send-email', function () {
-    return "Hello";
-});
+Route::get('/v1/send-email', 'ReceiptController@sendEmail');
