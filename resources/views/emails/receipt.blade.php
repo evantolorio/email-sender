@@ -18,7 +18,7 @@ Your gift summary is shown below:
     $totalAmount = $totalAmount + $details[3];
 @endphp
 @endforeach
-|                   |                   | **Total Amount**  | **{{ 'PHP ' . money_format('%!i', $totalAmount) }} ** |
+|                   |                   | **Total Amount**  | **{{ 'PHP ' . money_format('%!i', $totalAmount) }}** |
 @endcomponent
 
 Your generous support is making a  difference as we HONOR GOD and MAKE DISCIPLES. <br>
