@@ -11,36 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('send-email');
-});
+Route::get('/', function(){
+    return view('welcome');
+}); 
 
-Route::get('/sample-mail', function () {
+Route::get('/login', 'Auth\LoginController@redirectToProvider')->name('login');;
+Route::get('/login/callback', 'Auth\LoginController@handleProviderCallback');
+Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
-    $data = [
-        'email' => 'evantolorio@gmail.com',
-        'firstName' => 'Evan Norman',
-        'givingDetails' => [
-            [
-                'March 26, 2020',
-                'Tithes and Offering',
-                'Direct Deposit',
-                2000
-            ],
-            [
-                'March 26, 2020',
-                'Real LIFE',
-                'GCash',
-                1000
-            ],
-            [
-                'March 26, 2020',
-                'MPD',
-                'GCash',
-                1000
-            ]
-        ]
-    ];
+Route::get('/home', 'PageController@index')->name('home');
+Route::get('/sample-mail', 'PageController@getSampleEmail');
 
-    return new App\Mail\AcknowledgeGiving($data);
-});
+Auth::routes();

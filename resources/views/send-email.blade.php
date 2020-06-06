@@ -18,6 +18,11 @@
     <body>
     @verbatim
         <main id="app">
+            <button @click.prevent="getData"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+                Get Data
+            </button>
             <button @click.prevent="sendEmail"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
@@ -49,6 +54,19 @@
                             console.log(error);
                         });
 
+                    },
+
+                    getData() {
+
+                        axios.get('api/v1/get-data')
+                        .then(function (response) {
+                            // handle success
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            // handle error
+                            console.log(error);
+                        });
                     }
                 }
             });

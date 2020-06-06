@@ -3,21 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mail\AcknowledgeGiving;
-use Mail;
 
-class ReceiptController extends Controller
+class PageController extends Controller
 {
     /**
-     * Send email through specified GMail account
+     * Create a new controller instance.
      *
-     * @param Request $request
-     * @return string
+     * @return void
      */
-    public function sendEmail(Request $request)
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('send-email');
+    }
+
+    /**
+     * Get the sample email.
+     *
+     * @return void
+     */
+    public function getSampleEmail()
     {
         $data = [
-            'email' => 'nikki.bermas@victory.org.ph',
+            'email' => 'evantolorio@gmail.com',
             'firstName' => 'Evan Norman',
             'givingDetails' => [
                 [
@@ -40,21 +57,7 @@ class ReceiptController extends Controller
                 ]
             ]
         ];
-
-        Mail::to($data['email'])->send(new AcknowledgeGiving($data));
-
-        return "Email sent";
+    
+        return new App\Mail\AcknowledgeGiving($data);
     }
-
-    /**
-     * Get giving data from Google Sheet
-     *
-     * @param Request $request
-     * @return JSON
-     */
-    public function getData(Request $request)
-    {
-        return "Get Data";
-    }
-
 }
