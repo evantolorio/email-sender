@@ -78,8 +78,9 @@ class LoginController extends Controller
         // }
 
         try {
-            $user = Socialite::driver('google')->user();
-            $findUser = User::where('google_id', $user->id)->first();
+            $user = Socialite::driver('google')->stateless()->user();
+
+            $findUser = User::where('provider_id', $user->id)->first();
 
             if ($findUser) {
                 Auth::login($findUser);
@@ -93,7 +94,7 @@ class LoginController extends Controller
                         'provider_id' => $user->id
                     ]
                 );
-                
+
                 Auth::login($newUser);
                 return redirect()->route('home');
             }

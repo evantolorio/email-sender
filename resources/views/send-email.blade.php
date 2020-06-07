@@ -16,8 +16,8 @@
         </style>
     </head>
     <body>
-    @verbatim
         <main id="app">
+        @verbatim
             <button @click.prevent="getData"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
@@ -28,8 +28,20 @@
             >
                 Send Email
             </button>
+        @endverbatim
+
+        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
+            href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"
+        >
+            {{ __('Logout') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
         </main>
-    @endverbatim
         <!-- Scripts -->
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

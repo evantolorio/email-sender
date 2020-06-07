@@ -17,9 +17,7 @@ Route::get('/', function(){
 
 Route::get('/login', 'Auth\LoginController@redirectToProvider')->name('login');;
 Route::get('/login/callback', 'Auth\LoginController@handleProviderCallback');
-Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/home', 'PageController@index')->name('home');
 Route::get('/sample-mail', 'PageController@getSampleEmail');
-
-Auth::routes();
