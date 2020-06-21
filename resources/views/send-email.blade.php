@@ -26,18 +26,29 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td class="border px-4 py-2">Intro to CSS</td>
-                    <td class="border px-4 py-2">858</td>
-                </tr>
-                <tr class="bg-gray-100">
-                    <td class="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-                    <td class="border px-4 py-2">112</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 py-2">Intro to JavaScript</td>
-                    <td class="border px-4 py-2">1,280</td>
-                </tr>
+                    <template v-if="givingData.length > 0">
+                        <tr v-for="data in givingData">
+                            <td class="border px-4 py-2">
+                                {{ data.fullName }} <br>
+                                {{ data.emailTo }} <br>
+                                {{ data.firstName }}
+                            </td>
+                            <td class="border px-4 py-2">
+                                <template v-for="detail in data.givingDetails">
+                                    <span>
+                                        PHP {{ detail[3] }},
+                                        {{ detail[1] }},
+                                        {{ detail[2] }},
+                                        {{ detail[0] }}
+                                    </span> <br> 
+                                </template>
+                            </td>
+                        </tr>
+                    </template>
+                    <tr v-else>
+                        <td class="border px-4 py-2">None yet</td>
+                        <td class="border px-4 py-2">None yet</td>
+                    </tr>
                 </tbody>
             </table>
 
@@ -73,7 +84,7 @@
                 el: '#app',
 
                 data: {
-                    headers: [],
+                    givingData: [],
                     
                 },
 
@@ -93,11 +104,13 @@
                     },
 
                     getData() {
+                        const vm = this;
 
                         axios.get('api/v1/get-data')
                         .then(function (response) {
                             // handle success
                             console.log(response.data);
+                            vm.givingData = response.data;
                         })
                         .catch(function (error) {
                             // handle error

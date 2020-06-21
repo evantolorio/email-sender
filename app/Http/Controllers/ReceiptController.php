@@ -73,7 +73,7 @@ class ReceiptController extends Controller
 
             $processedData = [
                 'emailTo'       => $item['Email'],
-                'fullName'      => $itme['Name'],
+                'fullName'      => $item['Name'],
                 'firstName'     => $item['First Name'],
                 'givingDetails' => []
             ];
