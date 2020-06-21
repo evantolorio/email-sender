@@ -1,5 +1,5 @@
 @component('mail::message')
-Dear Evan Norman,
+Dear {{ $firstName }},
 
 Thank you for giving through our online giving channels.<br>
 
@@ -10,7 +10,7 @@ Your gift summary is shown below:
 | :---------------: | :---------------: | :---------------: | ----------------: |
 @php
     $totalAmount = 0;
-    setlocale(LC_MONETARY,"en_US");
+    setlocale(LC_MONETARY, "en_US");
 @endphp
 @foreach ($givingDetails as $details)
 | {{ $details[0] }} | {{ $details[1] }} | {{ $details[2] }} | {{ 'PHP ' . money_format('%!i', $details[3]) }} |

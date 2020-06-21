@@ -18,6 +18,29 @@
     <body>
         <main id="app">
         @verbatim
+            <table class="table-auto">
+                <thead>
+                <tr>
+                    <th class="px-4 py-2">Person Details</th>
+                    <th class="px-4 py-2">Giving Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border px-4 py-2">Intro to CSS</td>
+                    <td class="border px-4 py-2">858</td>
+                </tr>
+                <tr class="bg-gray-100">
+                    <td class="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
+                    <td class="border px-4 py-2">112</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Intro to JavaScript</td>
+                    <td class="border px-4 py-2">1,280</td>
+                </tr>
+                </tbody>
+            </table>
+
             <button @click.prevent="getData"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
@@ -50,7 +73,8 @@
                 el: '#app',
 
                 data: {
-                    message: 'Hello Vue!'
+                    headers: [],
+                    
                 },
 
                 methods: {
@@ -73,7 +97,7 @@
                         axios.get('api/v1/get-data')
                         .then(function (response) {
                             // handle success
-                            console.log(response);
+                            console.log(response.data);
                         })
                         .catch(function (error) {
                             // handle error

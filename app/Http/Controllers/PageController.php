@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AcknowledgeGiving;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -34,7 +35,7 @@ class PageController extends Controller
     public function getSampleEmail()
     {
         $data = [
-            'email' => 'evantolorio@gmail.com',
+            'emailTo' => 'evantolorio@gmail.com',
             'firstName' => 'Evan Norman',
             'givingDetails' => [
                 [
@@ -58,6 +59,6 @@ class PageController extends Controller
             ]
         ];
     
-        return new App\Mail\AcknowledgeGiving($data);
+        return new AcknowledgeGiving($data);
     }
 }

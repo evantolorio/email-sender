@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mail\AcknowledgeGiving;
+use Google_Spreadsheet;
 use Mail;
 
 class ReceiptController extends Controller
@@ -17,7 +18,7 @@ class ReceiptController extends Controller
     public function sendEmail(Request $request)
     {
         $data = [
-            'email' => 'nikki.bermas@victory.org.ph',
+            'emailTo' => 'nikki.bermas@victory.org.ph',
             'firstName' => 'Evan Norman',
             'givingDetails' => [
                 [
@@ -41,7 +42,7 @@ class ReceiptController extends Controller
             ]
         ];
 
-        Mail::to($data['email'])->send(new AcknowledgeGiving($data));
+        Mail::to($data['emailTo'])->send(new AcknowledgeGiving($data));
 
         return "Email sent";
     }
@@ -54,7 +55,63 @@ class ReceiptController extends Controller
      */
     public function getData(Request $request)
     {
-        return "Get Data";
+        $client = Google_Spreadsheet::getClient(storage_path().'/app/service-account-key.json');
+        // Get the sheet instance by sheets_id and sheet name
+        $sheet = $client->file('1YpC178lUWxUZRsQnherOwBKodrTOMpn1LPXD1FDt58I')->sheet('to email');
+        // Fetch data without cache
+        $items = $sheet->fetch(true)->items;
+
+        if (empty($items)) return json_encode([]);
+
+        $givingData = [];
+        // Build data
+        foreach ($items as $key => $item) {
+
+            // if ($item['Sent'] != '') {
+            //     continue;
+            // }
+
+            $processedData = [
+                'emailTo'       => $item['Email'],
+                'fullName'      => $itme['Name'],
+                'firstName'     => $item['First Name'],
+                'givingDetails' => []
+            ];
+
+            $keys = array_keys($item);
+
+            $beginTrackingDetails = false;
+            // Ignore last column which is 'Total'
+            for ($i = 0; $i < count($keys) - 1; $i++) {
+
+                // Track if ready to track giving details
+                if ($keys[$i] == 'Giving Method') {
+                    $beginTrackingDetails = true;
+                    continue;
+                }
+
+                // Ignore empty column headers
+                if (trim($keys[$i]) == '') {
+                    continue;
+                }
+
+                if ($beginTrackingDetails) {
+                    $processedData['givingDetails'][] = [
+                        $item['Timestamp'],
+                        $keys[$i],
+                        $item['Giving Method'],
+                        number_format(preg_replace('/[^0-9.]/', '', $item[$keys[$i]]), 2)
+                    ];
+                }
+            }
+
+            $givingData[] = $processedData;
+
+        }
+        
+
+        return json_encode($givingData);
+
     }
 
 }
