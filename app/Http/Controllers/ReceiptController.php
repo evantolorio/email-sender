@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mail\AcknowledgeGiving;
+use Carbon\Carbon;
 use Google_Spreadsheet;
 use Mail;
 
@@ -55,9 +56,11 @@ class ReceiptController extends Controller
      */
     public function getData(Request $request)
     {
+        $googleSheetId = $request->googleSheetId;
+
         $client = Google_Spreadsheet::getClient(storage_path().'/app/service-account-key.json');
         // Get the sheet instance by sheets_id and sheet name
-        $sheet = $client->file('1YpC178lUWxUZRsQnherOwBKodrTOMpn1LPXD1FDt58I')->sheet('to email');
+        $sheet = $client->file($googleSheetId)->sheet('to email');
         // Fetch data without cache
         $items = $sheet->fetch(true)->items;
 
@@ -75,6 +78,9 @@ class ReceiptController extends Controller
                 'emailTo'       => $item['Email'],
                 'fullName'      => $item['Name'],
                 'firstName'     => $item['First Name'],
+                'total'         => $item['Total'],
+                'timestamp'     => Carbon::createFromFormat('m/d/Y G:i:s', $item['Timestamp'])->format('M j, Y'),
+                'givingMethod'  => $item['Giving Method'],
                 'givingDetails' => []
             ];
 
@@ -96,11 +102,12 @@ class ReceiptController extends Controller
                 }
 
                 if ($beginTrackingDetails) {
+                    if (empty($item[$keys[$i]])) continue;
+
+                    // Given To, Amount
                     $processedData['givingDetails'][] = [
-                        $item['Timestamp'],
                         $keys[$i],
-                        $item['Giving Method'],
-                        number_format(preg_replace('/[^0-9.]/', '', $item[$keys[$i]]), 2)
+                        number_format((float)preg_replace('/[^0-9.]/', '', $item[$keys[$i]]), 2)
                     ];
                 }
             }

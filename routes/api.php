@@ -18,4 +18,4 @@ use Illuminate\Http\Request;
 // });
 
 Route::get('/v1/send-email', 'ReceiptController@sendEmail');
-Route::get('/v1/get-data', 'ReceiptController@getData');
+Route::post('/v1/get-data', 'ReceiptController@getData');
