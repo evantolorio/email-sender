@@ -17,5 +17,5 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::get('/v1/send-email', 'ReceiptController@sendEmail');
+Route::post('/v1/send-emails', 'ReceiptController@sendEmails');
 Route::post('/v1/get-data', 'ReceiptController@getData');

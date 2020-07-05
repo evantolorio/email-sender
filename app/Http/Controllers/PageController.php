@@ -35,25 +35,23 @@ class PageController extends Controller
     public function getSampleEmail()
     {
         $data = [
-            'emailTo' => 'evantolorio@gmail.com',
-            'firstName' => 'Evan Norman',
+            'emailTo'       => 'nikki.bermas@victory.org.ph',
+            'fullName'      => 'Evan Norman Tolorio',
+            'firstName'     => 'Evan Norman',
+            'total'         => '4000',
+            'timestamp'     => 'March 26, 2020',
+            'givingMethod'  => 'Direct Deposit - BPI',
             'givingDetails' => [
                 [
-                    'March 26, 2020',
                     'Tithes and Offering',
-                    'Direct Deposit',
                     2000
                 ],
                 [
-                    'March 26, 2020',
                     'Real LIFE',
-                    'GCash',
                     1000
                 ],
                 [
-                    'March 26, 2020',
                     'MPD',
-                    'GCash',
                     1000
                 ]
             ]

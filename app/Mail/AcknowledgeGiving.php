@@ -12,6 +12,8 @@ class AcknowledgeGiving extends Mailable
     use Queueable, SerializesModels;
 
     public $firstName;
+    public $timestamp;
+    public $givingMethod;
     public $givingDetails;
 
     /**
@@ -22,6 +24,8 @@ class AcknowledgeGiving extends Mailable
     public function __construct($data)
     {
         $this->firstName     = $data['firstName'];
+        $this->timestamp     = $data['timestamp'];
+        $this->givingMethod  = $data['givingMethod'];
         $this->givingDetails = $data['givingDetails'];
     }
 

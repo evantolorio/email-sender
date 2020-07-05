@@ -13,9 +13,9 @@ Your gift summary is shown below:
     setlocale(LC_MONETARY, "en_US");
 @endphp
 @foreach ($givingDetails as $details)
-| {{ $details[0] }} | {{ $details[1] }} | {{ $details[2] }} | {{ 'PHP ' . money_format('%!i', $details[3]) }} |
+| {{ $timestamp }} | {{ $details[0] }} | {{ $givingMethod }} | {{ 'PHP ' . money_format('%!i', $details[1]) }} |
 @php
-    $totalAmount = $totalAmount + $details[3];
+    $totalAmount = $totalAmount + $details[1];
 @endphp
 @endforeach
 |                   |                   | **Total Amount**  | **{{ 'PHP ' . money_format('%!i', $totalAmount) }}** |
@@ -30,7 +30,7 @@ Sincerely,<br>
 **Nikki Louise Bermas** <br>
 Finance Officer <br> <br>
 
-You are receiving this email because you gave to the missions efforts of Victory Los Baños. If you would like to receive an official receipt, kindly contact us through this email within 30 days upon receiving this acknowledgement receipt. If you would like to update your contact information, please click here.
+You are receiving this email because you gave to Victory Los Baños. If you would like to update your contact information, please click [here](http://google.com).
 
-For giving online, you may visit [victorylosbanos.org/giving.](http://victorylosbanos.org/giving)
+For giving online, you may visit [victorylosbanos.org/giving](http://victorylosbanos.org/giving).
 @endcomponent
