@@ -1,9 +1,7 @@
 @component('mail::message')
 Dear {{ $firstName }},
 
-Thank you for giving through our online giving channels.<br>
-
-Your gift summary is shown below:
+Thank you for faithfully giving to God. May God richly bless you! Here's the summary of your giving: <br>
 
 @component('mail::table')
 | Date              | Type of Giving    | Giving Method     | Amount            |
@@ -21,16 +19,14 @@ Your gift summary is shown below:
 |                   |                   | **Total Amount**  | **{{ 'PHP ' . money_format('%!i', $totalAmount) }}** |
 @endcomponent
 
-Your generous support is making a  difference as we HONOR GOD and MAKE DISCIPLES. <br>
-
-May God richly bless you! <br>
+Your partnership is making an impact in our campus and community as we HONOR GOD and MAKE DISCIPLES. <br>
 
 Sincerely,<br>
 
 **Nikki Louise Bermas** <br>
 Finance Officer <br> <br>
 
-You are receiving this email because you gave to Victory Los Baños. If you would like to update your contact information, please click [here](http://google.com).
+You are receiving this email because you gave to Victory Los Baños. You may contact our [Partner Relations](mailto:partner@victorylosbanos.org?subject=Update%20Giving%20Contact%20Information) if you would like to update your contact information.
 
 For giving online, you may visit [victorylosbanos.org/giving](http://victorylosbanos.org/giving).
 @endcomponent

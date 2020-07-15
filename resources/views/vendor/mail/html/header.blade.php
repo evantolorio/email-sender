@@ -5,7 +5,7 @@
                 <td>
                     <a href="{{ $url }}" style="display: inline-block;">
                     @if (trim($slot) === 'Laravel')
-                    <img src="{{ asset('email_header.jpg') }}" class="banner" alt="Giving Banner">
+                    <img src="{{ asset('email_header_light.png') }}" class="banner" alt="Giving Banner">
                     @else
                     {{ $slot }}
                     @endif
