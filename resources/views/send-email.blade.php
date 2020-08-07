@@ -193,7 +193,27 @@
                 </div>
             </div>
 
-            <table v-show="givingData.length > 0" class="w-full max-w-4xl mx-auto table-auto shadow rounded">
+            <div v-show="isError"
+                class=" max-w-4xl mx-auto bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md" 
+                role="alert"
+            >
+                <!-- Error message -->
+                <div class="flex">
+                    <div class="py-1">
+                        <svg class="fill-current h-6 w-6 text-red-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="font-bold">An error occured</p>
+                        <p class="text-sm">Make sure inputs are correct. If error still persists, please contact administrator for support.</p>
+                    </div>
+                </div>
+            </div>
+
+            <table v-show="givingData.length > 0" 
+                class="w-full max-w-4xl mx-auto table-auto shadow rounded"
+            >
                 <thead>
                 <tr>
                     <th class="px-4 py-2">Person Details</th>
@@ -287,7 +307,8 @@
                     googleSheetId: '',
                     givingData: [],
                     isGettingData: false,
-                    isSendingEmails: false
+                    isSendingEmails: false,
+                    isError: false,
                 },
 
                 methods: {
@@ -298,6 +319,7 @@
 
                         vm.givingData = [];
                         vm.isSendingEmails = true;
+                        vm.isError = false;
 
                         axios.post('api/v1/send-emails', {
                             googleSheetId: vm.googleSheetId
@@ -310,6 +332,7 @@
                         .catch(function (error) {
                             // handle error
                             console.log(error);
+                            vm.isError = true;
                             vm.isSendingEmails = false;
                         });
 
@@ -322,6 +345,7 @@
 
                         vm.givingData = [];
                         vm.isGettingData = true;
+                        vm.isError = false;
 
                         axios.post('api/v1/get-data', {
                             googleSheetId: vm.googleSheetId
@@ -334,6 +358,7 @@
                         .catch(function (error) {
                             // handle error
                             console.log(error);
+                            vm.isError = true;
                             vm.isGettingData = false;
                         });
                     }
