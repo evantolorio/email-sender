@@ -35,6 +35,11 @@ width: 100% !important;
 <table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
 <!-- Body content -->
 <tr>
+    <td align="center">
+        <img src="{{ asset('email_vlb_blue.png') }}" class="vlb-logo" alt="VLB Logo">
+    </td>
+</tr>
+<tr>
 <td class="content-cell">
 {{ Illuminate\Mail\Markdown::parse($slot) }}
 
