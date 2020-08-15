@@ -72,10 +72,7 @@ class ReceiptController extends Controller
                     // Given To, Amount
                     $processedData['givingDetails'][] = [
                         $keys[$i],
-                        number_format(
-                            (float)preg_replace('/[^0-9.]/', '', $item[$keys[$i]]), 
-                            2
-                        )
+                        (float)preg_replace('/[^0-9.]/', '', $item[$keys[$i]])
                     ];
                 }
             }
