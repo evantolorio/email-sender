@@ -83,12 +83,12 @@ class ReceiptController extends Controller
             $givingData[count($givingData)-1]['dateAcknowledged'] = $dateAcknowledged->format('M j, Y');
 
             // Send email
-            // Mail::to($processedData['emailTo'])->send(
-            //     new AcknowledgeGiving($processedData)
-            // );
+            Mail::to($processedData['emailTo'])->send(
+                new AcknowledgeGiving($processedData)
+            );
 
             // Update Google sheet
-            // $sheet->update(['Date Acknowledged' => $dateAcknowledged->format('m/d/Y G:i:s')], $item);
+            $sheet->update(['Date Acknowledged' => $dateAcknowledged->format('m/d/Y G:i:s')], $item);
 
         }
 
