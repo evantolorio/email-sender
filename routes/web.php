@@ -22,4 +22,5 @@ Route::get('/login/callback', 'Auth\LoginController@handleProviderCallback');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/home', 'PageController@index')->name('home');
+Route::post('/html-template', 'PageController@getHtmlTemplate');
 Route::get('/sample-mail', 'PageController@getSampleEmail');

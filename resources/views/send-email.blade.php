@@ -223,13 +223,17 @@
                 </thead>
                 <tbody>
                     <template v-if="givingData.length > 0">
-                        <tr v-for="data in givingData"
+                        <tr v-for="(data, index) in givingData"
                             class="hover:bg-gray-100"
                         >
                             <!-- Person details -->
                             <td class="border-t-2 px-4 py-2">
                                 <span class="inline-block align-baseline inline-flex items-center font-bold">
-                                    {{ data.fullName }}
+                                    <span @click.prevent="viewHtmlTemplate(index)"
+                                        class="hover:text-purple-700 cursor-pointer"
+                                    >
+                                        {{ data.fullName }}
+                                    </span>
                                     <span v-if="data.dateAcknowledged"
                                         class="tooltip"
                                     >
@@ -294,12 +298,15 @@
             </table>
         @endverbatim
 
-            
+            <div id="form-container"></div>
         </main>
         <!-- Scripts -->
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script>
+
+            window.laravelCsrfToken = @json(csrf_token());
+
             const app = new Vue({
                 el: '#app',
 
@@ -361,6 +368,33 @@
                             vm.isError = true;
                             vm.isGettingData = false;
                         });
+                    },
+
+                    viewHtmlTemplate(index) {
+                        let data = this.givingData[index];
+                        let csrfToken = window.laravelCsrfToken;
+                        let givingDetails = JSON.stringify(data.givingDetails).replace('"', '&quot;');; 
+
+                        let form = document.createElement('form');
+                        form.action = '/html-template';
+                        form.method = 'POST';
+                        form.target = '_blank';
+
+                        form.innerHTML = `
+                            <input type="hidden" name="_token" value="${csrfToken}">
+                            <input type="hidden" name="emailTo" value="${data.emailTo}">
+                            <input type="hidden" name="fullName" value="${data.fullName}">
+                            <input type="hidden" name="firstName" value="${data.firstName}">
+                            <input type="hidden" name="total" value="${data.total}">
+                            <input type="hidden" name="timestamp" value="${data.timestamp}">
+                            <input type="hidden" name="givingMethod" value="${data.givingMethod}">
+                            <input type="hidden" name="givingDetails" value='${givingDetails}'>
+                        `;
+
+                        // the form must be in the document to submit it
+                        document.querySelector('#form-container').append(form);
+
+                        form.submit();
                     }
                 }
             });
