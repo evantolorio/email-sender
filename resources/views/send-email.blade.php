@@ -21,7 +21,7 @@
             .sk-cube-grid .sk-cube {
                 width: 33%;
                 height: 33%;
-                background-color: #2F855A;
+                background-color: #1E40AF;
                 float: left;
                 -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
                         animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
@@ -91,7 +91,7 @@
     </head>
     <body>
         <header>
-            <nav class="flex items-center justify-center flex-wrap bg-blue-300 p-6">
+            <nav class="flex items-center justify-center flex-wrap bg-gradient-to-r from-green-500 to-blue-700 p-6">
                 <div class="flex items-center flex-shrink-0 text-white mr-6">
                     <!--div>Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div-->
                     <svg class="fill-current h-8 w-8 mr-2" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
@@ -99,14 +99,14 @@
                             <path d="m238.142 320.36 82.858 82.858 132.859-395.718z" fill="#e4fbef"/></g><g><path d="m378.287 232.589c-15.684 11.906-33.217 22.71-52.337 31.941-21.654 10.455-43.622 18.059-65.131 22.941l-22.676 32.888 82.857 82.859z" fill="#d3effb"/></g><g><path d="m140.999 223.216-82.858-82.858 395.718-132.858z" fill="#e4fbef"/></g><g><path d="m146.713 314.645-5.714-91.429 312.86-215.716z" fill="#d3effb"/></g><g><path d="m146.713 314.645 307.146-307.145-215.717 312.86z" fill="#b1e4f9"/></g><g><path d="m459.164 2.196c-2.015-2.014-4.991-2.71-7.691-1.807l-273.051 91.68c-3.926 1.319-6.041 5.571-4.723 9.498 1.318 3.926 5.567 6.04 9.498 4.723l222.541-74.721-263.854 181.927-69.881-69.879 78.015-26.198c3.927-1.318 6.041-5.57 4.722-9.497-1.318-3.927-5.567-6.044-9.497-4.722l-89.49 30.051c-2.461.826-4.32 2.867-4.914 5.395-.593 2.527.162 5.183 1.998 7.019l80.855 80.854 5.326 85.218-1.849 1.85c-2.929 2.93-2.929 7.678.001 10.606 1.465 1.464 3.384 2.196 5.303 2.196 1.92 0 3.84-.732 5.304-2.197l1.849-1.849 85.217 5.326 80.856 80.855c1.423 1.423 3.338 2.196 5.304 2.196.571 0 1.146-.065 1.715-.199 2.528-.594 4.568-2.452 5.396-4.914l61.42-182.929c1.318-3.927-.797-8.18-4.723-9.498-3.926-1.317-8.18.795-9.498 4.724l-57.566 171.453-69.88-69.88 181.928-263.864-43.346 129.11c-1.318 3.927.797 8.179 4.724 9.497.792.266 1.596.392 2.388.392 3.134 0 6.057-1.98 7.109-5.115l60.3-179.611c.906-2.698.207-5.676-1.806-7.69zm-224.788 310.414-70.607-4.413 237.196-237.196zm155.98-252.215-237.195 237.194-4.412-70.606z"/><path d="m121.392 399.014h-12.783c-4.143 0-7.5 3.357-7.5 7.5s3.357 7.5 7.5 7.5h12.783c4.143 0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5z"/><path d="m186.239 425.349c-3.962-1.188-8.148 1.055-9.342 5.023-.593 1.971-1.686 3.763-3.25 5.326l-1.964 1.964c-2.929 2.93-2.929 7.678 0 10.607 1.465 1.464 3.385 2.196 5.304 2.196s3.839-.732 5.304-2.196l1.964-1.964c3.336-3.336 5.693-7.244 7.008-11.615 1.192-3.965-1.057-8.147-5.024-9.341z"/><path d="m89.473 370.082c-3.619-2.01-8.188-.704-10.197 2.918-2.226 4.009-3.401 8.562-3.401 13.166 0 1.289.092 2.594.272 3.876.529 3.746 3.74 6.452 7.417 6.452.35 0 .703-.024 1.059-.074 4.102-.58 6.957-4.374 6.378-8.476-.084-.59-.126-1.188-.126-1.778 0-2.093.51-4.073 1.517-5.887 2.009-3.621.703-8.188-2.919-10.197z"/><path d="m109.328 359.531c1.919 0 3.839-.732 5.304-2.196l9.039-9.039c2.929-2.93 2.929-7.678 0-10.607-2.93-2.928-7.678-2.928-10.607 0l-9.039 9.039c-2.929 2.93-2.929 7.678 0 10.607 1.464 1.463 3.384 2.196 5.303 2.196z"/><path d="m175.637 408.077c.698-4.083-2.046-7.959-6.129-8.656-1.576-.27-3.206-.406-4.843-.406h-9.186c-4.143 0-7.5 3.357-7.5 7.5s3.357 7.5 7.5 7.5h9.186c.793 0 1.571.064 2.315.191.428.073.853.108 1.272.108 3.588 0 6.76-2.582 7.385-6.237z"/><path d="m147.581 461.766-9.039 9.039c-2.929 2.93-2.929 7.678 0 10.607 1.465 1.464 3.385 2.196 5.304 2.196s3.839-.732 5.304-2.196l9.039-9.039c2.929-2.93 2.929-7.678 0-10.607-2.93-2.928-7.678-2.928-10.608 0z"/><path d="m114.393 494.954-4.242 4.242c-2.929 2.93-2.929 7.678 0 10.607 1.465 1.464 3.385 2.196 5.304 2.196s3.839-.732 5.304-2.196l4.242-4.242c2.929-2.93 2.929-7.678 0-10.607-2.93-2.928-7.678-2.928-10.608 0z"/>
                         </g>
                     </svg>
-                    <span class="font-semibold text-xl tracking-tight">VLB Giving Acknowledgement</span>
+                    <span class="font-semibold text-xl tracking-tight">Victory Laguna Giving Acknowledgement</span>
                 </div>
             </nav>
         </header>
         <main id="app" class="container min-h-screen mx-auto py-12">
             {{-- Logout --}}
             <div class="flex justify-end">
-                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 inline-flex items-center" 
+                <a class="inline-block align-baseline text-sm text-blue-500 hover:text-blue-800 inline-flex items-center" 
                     href="{{ route('logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                 >
@@ -140,20 +140,20 @@
                         <div class="inline-block">
                             <!-- Get Data button -->
                             <button @click.prevent="getData"
-                                class="bg-green-500 text-white font-bold mr-4 py-2 px-4 rounded"
+                                class="bg-blue-500 text-white font-bold mr-4 py-2 px-4 rounded"
                                 :class="googleSheetId.trim().length == 0  || (isGettingData || isSendingEmails)
                                     ? 'opacity-50 cursor-not-allowed' 
-                                    : 'hover:bg-green-700'"
+                                    : 'hover:bg-blue-700'"
                             >
                                 {{ isGettingData ? 'Getting...' : 'Get Data' }}
                             </button>
     
                             <!-- Send Emails button -->
                             <button @click.prevent="sendEmail"
-                                class="bg-transparent text-green-700 font-semibold py-2 px-4 border border-green-500 rounded"
+                                class="bg-transparent text-blue-700 font-semibold py-2 px-4 border border-blue-500 rounded"
                                 :class="givingData.length == 0 || (isGettingData || isSendingEmails)
                                     ? 'opacity-50 cursor-not-allowed' 
-                                    : 'hover:bg-green-500 hover:text-white hover:border-transparent'"
+                                    : 'hover:bg-blue-500 hover:text-white hover:border-transparent'"
                             >
                                 {{ isSendingEmails ? 'Sending...' : 'Send Emails' }}
                             </button>
@@ -246,7 +246,7 @@
                                         <span class='tooltip-text bg-purple-200 p-3 -mt-6 ml-8 rounded text-sm'>Acknowledged on {{ data.dateAcknowledged }}</span>
                                     </span>
                                 </span> <br> 
-                                <span class="text-gray-600 text-sm">
+                                <span class="text-sm">
                                     {{ data.firstName }}
                                 </span> <br>
                                 <span class="inline-block align-baseline inline-flex items-center text-gray-600 text-sm">
@@ -277,7 +277,7 @@
                                         <p>
                                             <span class="text-sm text-gray-600">{{ detail[0] }}</span>
                                         </p>
-                                        <span class="font-medium text-sm">
+                                        <span class="text-sm">
                                             PHP {{ detail[1] }}
                                         </span>
                                     </div>
