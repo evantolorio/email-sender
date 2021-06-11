@@ -67,12 +67,38 @@ class LoginController extends Controller
                 Auth::login($findUser);
                 return redirect()->route('home');
             } else {
+                // Determine email
+                $center = '';
+
+                $emailCalamba  = env('MAIL_CL_USERNAME');
+                $emailSanPablo = env('MAIL_SP_USERNAME');
+                $emailStaCruz  = env('MAIL_SC_USERNAME');
+
+                switch ($user->email) {
+                    case $emailCalamba:
+                        $center = 'cl';
+                        break;
+
+                    case $emailSanPablo:
+                        $center = 'sp';
+                        break;
+                    
+                    case $emailStaCruz:
+                        $center = 'sc';
+                        break;
+                    
+                    default:
+                        $center = 'lb';
+                        break;
+                }
+
                 $newUser = User::create(
                     [
                         'name'        => $user->name, 
                         'email'       => $user->email, 
                         'provider'    => 'google',
-                        'provider_id' => $user->id
+                        'provider_id' => $user->id,
+                        'center'      => $center
                     ]
                 );
 

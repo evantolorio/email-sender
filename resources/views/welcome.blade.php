@@ -51,7 +51,7 @@
                         </div>
                     </form>
                     <p class="text-center text-gray-500 text-xs">
-                        &copy;{{ date('Y') }} Victory Los Baños. All rights reserved.
+                        &copy;{{ date('Y') }} Victory Laguna. All rights reserved.
                     </p>
                 </div>
             </div>
