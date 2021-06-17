@@ -21,7 +21,7 @@
 {{-- Footer --}}
 @slot('footer')
 @component('mail::footer')
-© {{ date('Y') }} Victory Los Baños. @lang('All rights reserved.')
+© {{ date('Y') }} Victory Laguna. @lang('All rights reserved.')
 @endcomponent
 @endslot
 @endcomponent

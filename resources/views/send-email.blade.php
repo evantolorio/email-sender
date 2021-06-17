@@ -115,7 +115,7 @@
                                 Victory San Pablo
                                 @break
     
-                            @case('sp')
+                            @case('sc')
                                 Victory Santa Cruz
                                 @break
     
