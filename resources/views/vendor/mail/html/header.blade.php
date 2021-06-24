@@ -3,9 +3,9 @@
         <table class="inner-header" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
             <tr>
                 <td>
-                    <a href="{{ $url }}" style="display: inline-block;">
+                    <a href="#!" style="display: inline-block; cursor: default;">
                     @if (trim($slot) === 'Laravel')
-                    @switch(Auth::user()->center)
+                    @switch($center)
                     @case('cl')
                     <img src="{{ asset('calamba/cal_header.png') }}" class="banner" alt="Giving Banner">
                     @break
@@ -27,7 +27,7 @@
                     @endif
                     </a>
                     {{-- Header Giving Acknowledgement Receipt --}}
-                    @switch(Auth::user()->center)
+                    @switch($center)
                     @case('cl')
                     <span id="calamba">
                     GIVING ACKNOWLEDGEMENT RECEIPT  

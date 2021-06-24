@@ -36,7 +36,7 @@ width: 100% !important;
 <!-- Body content -->
 <tr>
     <td align="center">
-        @switch(Auth::user()->center)
+        @switch($center)
         @case('cl')
         <img src="{{ asset('calamba/cal_logo_blue.png') }}" class="vlb-logo" alt="VLB Logo">
         @break

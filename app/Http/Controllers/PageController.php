@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Mail\AcknowledgeGiving;
 use Illuminate\Http\Request;
 
@@ -43,6 +44,7 @@ class PageController extends Controller
         }
 
         $data = [
+            'center'        => Auth::user()->center,
             'emailTo'       => $request->emailTo,
             'fullName'      => $request->fullName,
             'firstName'     => $request->firstName,
@@ -51,7 +53,7 @@ class PageController extends Controller
             'givingMethod'  => $request->givingMethod,
             'givingDetails' => $givingDetails
         ];
-    
+
         return new AcknowledgeGiving($data);
     }
 

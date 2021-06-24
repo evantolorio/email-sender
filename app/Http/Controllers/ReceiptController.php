@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Mail\AcknowledgeGiving;
 use Carbon\Carbon;
 use Google_Spreadsheet;
+use Illuminate\Http\Request;
 use Mail;
+use Swift_SmtpTransport as SmtpTransport;
+use Swift_Mailer;
 
 class ReceiptController extends Controller
 {
@@ -20,7 +22,11 @@ class ReceiptController extends Controller
      */
     public function sendEmails(Request $request)
     {
+        $center        = $request->center;
         $googleSheetId = $request->googleSheetId;
+
+        // Set appropriate mailer configuration for respective center
+        $this->setMailer($center);
 
         $client = Google_Spreadsheet::getClient(storage_path().'/app/service-account-key.json');
         // Get the sheet instance by sheets_id and sheet name
@@ -40,6 +46,7 @@ class ReceiptController extends Controller
             }
 
             $processedData = [
+                'center'        => $center,
                 'emailTo'       => $item['Email'],
                 'fullName'      => $item['Name'],
                 'firstName'     => $item['First Name'],
@@ -169,6 +176,53 @@ class ReceiptController extends Controller
 
         return json_encode($givingData);
 
+    }
+
+    /**
+     * Set Mailer with appropriate configuration based from center
+     *
+     * @param String $center
+     * @return void
+     */
+    private function setMailer($center) {
+        // Create the Transport according to contextualized center
+        $username = '';
+        $password = '';
+
+        switch ($center) {
+            case 'cl':
+                $username = env('MAIL_CL_USERNAME');
+                $password = env('MAIL_CL_PASSWORD');
+                break;
+
+            case 'sp':
+                $username = env('MAIL_SP_USERNAME');
+                $password = env('MAIL_SP_PASSWORD'); 
+                break;
+
+            case 'sc':
+                $username = env('MAIL_SC_USERNAME');
+                $password = env('MAIL_SC_PASSWORD'); 
+                break;
+            
+            default:
+                $username = env('MAIL_LB_USERNAME');
+                $password = env('MAIL_LB_PASSWORD');  
+                break;
+        }
+
+        $transport = (new SmtpTransport(env('MAIL_HOST'), env('MAIL_PORT')))
+            ->setUsername($username)
+            ->setPassword($password);
+
+        if (!empty(env('MAIL_ENCRYPTION'))) {
+            $transport->setEncryption(env('MAIL_ENCRYPTION'));
+        }
+
+        // Create the Mailer using created Transport
+        $mailer = new Swift_Mailer($transport);
+
+        Mail::setSwiftMailer($mailer);
     }
 
 }

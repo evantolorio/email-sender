@@ -340,6 +340,7 @@
         <script>
 
             window.laravelCsrfToken = @json(csrf_token());
+            window.center = "{{ Auth::user()->center }}";
 
             const app = new Vue({
                 el: '#app',
@@ -363,7 +364,8 @@
                         vm.isError = false;
 
                         axios.post('api/v1/send-emails', {
-                            googleSheetId: vm.googleSheetId
+                            googleSheetId: vm.googleSheetId,
+                            center: window.center
                         })
                         .then(function (response) {
                             // handle success

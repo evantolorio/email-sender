@@ -1,7 +1,7 @@
-@component('mail::layout')
+@component('mail::layout', ['center' => $center])
 {{-- Header --}}
 @slot('header')
-@component('mail::header', ['url' => config('app.url')])
+@component('mail::header', ['url' => config('app.url'), 'center' => $center])
 {{ config('app.name') }}
 @endcomponent
 @endslot

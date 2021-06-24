@@ -1,4 +1,4 @@
-@component('mail::message')
+@component('mail::message', ['center' => $center])
 Dear {{ $firstName }},
 
 Thank you for faithfully giving to God. May God richly bless you! Here's the summary of your giving: <br>
@@ -22,7 +22,7 @@ Your partnership is making an impact in our campus and community as we HONOR GOD
 
 Sincerely,<br>
 
-@switch(Auth::user()->center)
+@switch($center)
 @case('cl')
 **{{ env('MAIL_CL_NAME') }}**
 @break
@@ -41,17 +41,29 @@ Sincerely,<br>
 <br>
 Finance Officer <br> <br>
 
-@switch(Auth::user()->center)
+@switch($center)
 @case('cl')
-You are receiving this email because you gave to Victory Calamba.
+*You are receiving this email because you gave to Victory Calamba. If you have any questions or concerns, you may contact our Finance Department at:*
+
+***Email**: calamba@victory.org.ph*<br> 
+***Phone**: 0917-326-0121*<br>
+***Address**: 2nd Flr. Bldg. 3, Denson Compound, National Hi-way, Halang, Calamba City*
 @break
 
 @case('sp')
-You are receiving this email because you gave to Victory San Pablo.
+*You are receiving this email because you gave to Victory San Pablo. If you have any questions or concerns, you may contact our Finance Department at:*
+
+***Email**: sanpablo@victory.org.ph*<br> 
+***Phone**: 0917-503-3738*<br>
+***Address**: 3/F Lynderson Building, Lopez Jaena Street, Brgy. VII-B, San Pablo City, Laguna, 4000*
 @break
 
 @case('sc')
-You are receiving this email because you gave to Victory Santa Cruz.
+*You are receiving this email because you gave to Victory Santa Cruz. If you have any questions or concerns, you may contact our Finance Department at:*
+
+***Email**: santacruz@victory.org.ph*<br> 
+***Phone**: 0917-505-1123*<br>
+***Address**: Primark Town Center, Sitio Mapagmahal Brgy. Pagsawitan, Santa Cruz, Laguna, 4009*
 @break
 
 @default
