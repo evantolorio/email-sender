@@ -42,7 +42,7 @@ width: 100% !important;
         @break
 
         @case('cy')
-        <img src="{{ asset('cabuyao/cy_logo_blue.png') }}" class="vlb-logo" alt="Logo">
+        <img src="{{ asset('cabuyao/cy_logo_black.png') }}" class="vlb-logo" alt="Logo">
         @break
 
         @case('sp')
