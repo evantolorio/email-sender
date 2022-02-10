@@ -134,7 +134,8 @@ img {
     text-align: center;
 }
 
-.inner-header span#calamba {
+.inner-header span#calamba, 
+.inner-header span#cabuyao {
     display: block;
     padding: 12px 0;
     background-color: #132939;

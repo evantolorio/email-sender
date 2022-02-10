@@ -10,6 +10,10 @@
                     <img src="{{ asset('calamba/cal_header.png') }}" class="banner" alt="Giving Banner">
                     @break
 
+                    @case('cy')
+                    <img src="{{ asset('cabuyao/cy_header.png') }}" class="banner" alt="Giving Banner">
+                    @break
+
                     @case('sp')
                     <img src="{{ asset('sanpablo/sp_header.png') }}" class="banner" alt="Giving Banner">
                     @break
@@ -30,6 +34,12 @@
                     @switch($center)
                     @case('cl')
                     <span id="calamba">
+                    GIVING ACKNOWLEDGEMENT RECEIPT  
+                    </span>
+                    @break
+
+                    @case('cy')
+                    <span id="cabuyao">
                     GIVING ACKNOWLEDGEMENT RECEIPT  
                     </span>
                     @break

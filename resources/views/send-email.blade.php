@@ -110,6 +110,10 @@
                             @case('cl')
                                 Victory Calamba
                                 @break
+
+                            @case('cy')
+                                Victory Cabuyao
+                                @break
     
                             @case('sp')
                                 Victory San Pablo

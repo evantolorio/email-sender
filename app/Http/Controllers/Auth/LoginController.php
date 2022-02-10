@@ -71,12 +71,17 @@ class LoginController extends Controller
                 $center = '';
 
                 $emailCalamba  = env('MAIL_CL_USERNAME');
+                $emailCabuyao  = env('MAIL_CY_USERNAME');
                 $emailSanPablo = env('MAIL_SP_USERNAME');
                 $emailStaCruz  = env('MAIL_SC_USERNAME');
 
                 switch ($user->email) {
                     case $emailCalamba:
                         $center = 'cl';
+                        break;
+
+                    case $emailCabuyao:
+                        $center = 'cy';
                         break;
 
                     case $emailSanPablo:

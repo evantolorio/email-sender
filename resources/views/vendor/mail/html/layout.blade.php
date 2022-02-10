@@ -38,19 +38,23 @@ width: 100% !important;
     <td align="center">
         @switch($center)
         @case('cl')
-        <img src="{{ asset('calamba/cal_logo_blue.png') }}" class="vlb-logo" alt="VLB Logo">
+        <img src="{{ asset('calamba/cal_logo_blue.png') }}" class="vlb-logo" alt="Logo">
+        @break
+
+        @case('cy')
+        <img src="{{ asset('cabuyao/cy_logo_blue.png') }}" class="vlb-logo" alt="Logo">
         @break
 
         @case('sp')
-        <img src="{{ asset('sanpablo/sp_logo_blue.png') }}" class="vlb-logo" alt="VLB Logo">
+        <img src="{{ asset('sanpablo/sp_logo_blue.png') }}" class="vlb-logo" alt="Logo">
         @break
 
         @case('sc')
-        <img src="{{ asset('santacruz/sc_logo_black.png') }}" class="vlb-logo" alt="VLB Logo">
+        <img src="{{ asset('santacruz/sc_logo_black.png') }}" class="vlb-logo" alt="Logo">
         @break
 
         @default
-        <img src="{{ asset('losbanos/lb_logo_blue.png') }}" class="vlb-logo" alt="VLB Logo">
+        <img src="{{ asset('losbanos/lb_logo_blue.png') }}" class="vlb-logo" alt="Logo">
         @endswitch
     </td>
 </tr>

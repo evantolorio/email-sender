@@ -27,6 +27,10 @@ Sincerely,<br>
 **{{ env('MAIL_CL_NAME') }}**
 @break
 
+@case('cy')
+**{{ env('MAIL_CY_NAME') }}**
+@break
+
 @case('sp')
 **{{ env('MAIL_SP_NAME') }}**
 @break
@@ -46,8 +50,15 @@ Finance Officer <br> <br>
 *You are receiving this email because you gave to Victory Calamba. If you have any questions or concerns, you may contact our Finance Department at:*
 
 ***Email**: calamba@victory.org.ph*<br> 
-***Phone**: 0917-326-0121*<br>
+***Phone**: 0915-597-5084*<br>
 ***Address**: 2nd Flr. Bldg. 3, Denson Compound, National Hi-way, Halang, Calamba City*
+@break
+
+@case('cy')
+*You are receiving this email because you gave to Victory Cabuyao. If you have any questions or concerns, you may contact our Finance Department at:*
+
+***Email**: cabuyao@victory.org.ph*<br> 
+***Phone**: 0915-597-5084*
 @break
 
 @case('sp')

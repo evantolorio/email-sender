@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('provider');
             $table->string('provider_id');
-            $table->enum('center', ['cl', 'lb', 'sp', 'sc']);
+            $table->enum('center', ['cl', 'cy', 'lb', 'by', 'sp', 'sc', 'nc', 'sl']);
+            // This 2022, claiming for the future churches in Laguna!!
             $table->rememberToken();
             $table->timestamps();
         });
