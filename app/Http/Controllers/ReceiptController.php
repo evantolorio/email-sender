@@ -195,6 +195,11 @@ class ReceiptController extends Controller
                 $password = env('MAIL_CL_PASSWORD');
                 break;
 
+            case 'cy':
+                $username = env('MAIL_CY_USERNAME');
+                $password = env('MAIL_CY_PASSWORD');
+                break;
+
             case 'sp':
                 $username = env('MAIL_SP_USERNAME');
                 $password = env('MAIL_SP_PASSWORD'); 
