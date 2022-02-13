@@ -49,6 +49,12 @@ class AcknowledgeGiving extends Mailable
                 $name = env('MAIL_CL_NAME');
                 $title = 'Victory Calamba Acknowledgement Receipt';
                 break;
+            
+            case 'cy':
+                $address = env('MAIL_CY_USERNAME');
+                $name = env('MAIL_CY_NAME');
+                $title = 'Victory Cabuyao Acknowledgement Receipt';
+                break;
 
             case 'sp':
                 $address = env('MAIL_SP_USERNAME');
