@@ -39,6 +39,10 @@ Sincerely,<br>
 **{{ env('MAIL_SC_NAME') }}**
 @break
 
+@case('sl')
+**{{ env('MAIL_SL_NAME') }}**
+@break
+
 @default
 **{{ env('MAIL_LB_NAME') }}**
 @endswitch
@@ -75,6 +79,13 @@ Finance Officer <br> <br>
 ***Email**: santacruz@victory.org.ph*<br> 
 ***Phone**: 0917-505-1123*<br>
 ***Address**: Primark Town Center, Sitio Mapagmahal Brgy. Pagsawitan, Santa Cruz, Laguna, 4009*
+@break
+
+@case('sl')
+*You are receiving this email because you gave to Victory Siniloan. If you have any questions or concerns, you may contact our Finance Department at:*
+
+***Email**: siniloan@victory.org.ph*<br> 
+***Phone**: 0999-8933-248*
 @break
 
 @default

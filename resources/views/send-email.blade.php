@@ -122,6 +122,10 @@
                             @case('sc')
                                 Victory Santa Cruz
                                 @break
+
+                            @case('sl')
+                                Victory Siniloan
+                                @break
     
                             @default
                                 Victory Los Baños

@@ -53,6 +53,10 @@ width: 100% !important;
         <img src="{{ asset('santacruz/sc_logo_black.png') }}" class="vlb-logo" alt="Logo">
         @break
 
+        @case('sl')
+        <img src="{{ asset('siniloan/sl_logo_blue.png') }}" class="vlb-logo" alt="Logo">
+        @break
+
         @default
         <img src="{{ asset('losbanos/lb_logo_blue.png') }}" class="vlb-logo" alt="Logo">
         @endswitch

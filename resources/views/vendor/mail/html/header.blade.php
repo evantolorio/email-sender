@@ -22,6 +22,10 @@
                     <img src="{{ asset('santacruz/sc_header.png') }}" class="banner" alt="Giving Banner">
                     @break
 
+                    @case('sl')
+                    <img src="{{ asset('siniloan/sl_header.png') }}" class="banner" alt="Giving Banner">
+                    @break
+
                     @default
                     <img src="{{ asset('losbanos/lb_header.png') }}" class="banner" alt="Giving Banner">
                     @endswitch
@@ -52,6 +56,12 @@
 
                     @case('sc')
                     <span id="santacruz">
+                    GIVING ACKNOWLEDGEMENT RECEIPT  
+                    </span>
+                    @break
+
+                    @case('sl')
+                    <span id="siniloan">
                     GIVING ACKNOWLEDGEMENT RECEIPT  
                     </span>
                     @break
