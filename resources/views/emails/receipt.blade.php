@@ -86,6 +86,7 @@ Finance Officer <br> <br>
 
 ***Email**: siniloan@victory.org.ph*<br> 
 ***Phone**: 0999-8933-248*
+***Address**: 2nd Flr. DelRos Bldg. III, G. Redor St., Brgy. Pandeño, Siniloan, Laguna*
 @break
 
 @default
