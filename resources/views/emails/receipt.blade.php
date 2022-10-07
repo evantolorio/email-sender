@@ -85,7 +85,7 @@ Finance Officer <br> <br>
 *You are receiving this email because you gave to Victory Siniloan. If you have any questions or concerns, you may contact our Finance Department at:*
 
 ***Email**: siniloan@victory.org.ph*<br> 
-***Phone**: 0999-8933-248*
+***Phone**: 0999-8933-248*<br>
 ***Address**: 2nd Flr. DelRos Bldg. III, G. Redor St., Brgy. Pandeño, Siniloan, Laguna*
 @break
 
