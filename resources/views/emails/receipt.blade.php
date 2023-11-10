@@ -62,7 +62,7 @@ Finance Officer <br> <br>
 *You are receiving this email because you gave to Victory Cabuyao. If you have any questions or concerns, you may contact our Finance Department at:*
 
 ***Email**: cabuyao@victory.org.ph*<br> 
-***Phone**: 0991-913-1163*<br>
+***Phone**: 0915-597-5084*<br>
 ***Address**: 3rd Flr Serafin Bldg. 223 Banlic, Cabuyao, Laguna*
 @break
 
