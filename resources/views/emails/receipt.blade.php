@@ -93,7 +93,7 @@ Finance Officer <br> <br>
 @default
 You are receiving this email because you gave to Victory Los Baños. You may contact our [Partner Relations](mailto:partner@victorylosbanos.org?subject=Update%20Giving%20Contact%20Information) if you would like to update your contact information.
 
-For giving online, you may visit [victorylosbanos.org/giving](http://victorylosbanos.org/giving).
+For giving online, you may visit [victorylaguna.org/give](https://victorylaguna.org/give).
 @endswitch
 
 
