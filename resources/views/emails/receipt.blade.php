@@ -54,16 +54,16 @@ Finance Officer <br> <br>
 *You are receiving this email because you gave to Victory Calamba. If you have any questions or concerns, you may contact our Finance Department at:*
 
 ***Email**: calamba@victory.org.ph*<br> 
-***Phone**: 0915-597-5084*<br>
-***Address**: 2nd Flr. Bldg. 3, Denson Compound, National Hi-way, Halang, Calamba City*
+***Phone**: 0917-179-7105*<br>
+***Address**: 2nd Flr. Bldg. 3, Denson Compound, National Highway, Brgy. Halang, Calamba City, Laguna*
 @break
 
 @case('cy')
 *You are receiving this email because you gave to Victory Cabuyao. If you have any questions or concerns, you may contact our Finance Department at:*
 
 ***Email**: cabuyao@victory.org.ph*<br> 
-***Phone**: 0915-597-5084*<br>
-***Address**: 3rd Flr Serafin Bldg. 223 Banlic, Cabuyao, Laguna*
+***Phone**: 0917-179-7105*<br>
+***Address**: 2F LS Square, Brgy. Sala, Cabuyao, Laguna*
 @break
 
 @case('sp')
